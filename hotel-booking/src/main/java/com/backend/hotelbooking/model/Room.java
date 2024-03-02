@@ -14,13 +14,12 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "room")
+@Table(name = "rooms")
 public class Room {
 
     @Id
@@ -33,6 +32,7 @@ public class Room {
     @Column(name = "is_booked")
     private boolean isBooked = false;
     @Lob
+    @Column(name = "photo")
     private Blob photo;
 
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
